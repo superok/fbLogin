@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Drive API Quickstart</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  	<link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="upload.js"></script>
+  </head>
+  <body>
+    <!--Add buttons to initiate auth sequence and sign out-->    
+    <button id="authorize_button" style="">Authorize</button>
+    <button id="signout_button" style="display: none;">Sign Out</button>
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+    
+    <form id="upload_form" enctype="multipart/form-data" method="post">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                	Please select Images files to upload:
+                    <input type="file" name="fileUploader" id="fileUploader" class="btn btn-default" 
+                    	accept="image/*" multiple>
+                </div>
+                <div class="col-md-4" style="text-align:right;">
+                    <input type="button" id="btnUpload" style="display:none" 
+                    	class="btn btn-default" value="Upload File" onclick="uploadFiles()">
+                </div>
+            </div>
+            <div class="row">
+                <div id="divFiles" class="files">
+                </div>
+            </div>
+        </div>
+    </form>
+    
+<div id="dialog" title="Upload Completed">
+  <p>All Files are Upload Completed.</p>
+</div>
+    
+  </body>
+</html>
